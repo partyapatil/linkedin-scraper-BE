@@ -1,1 +1,7 @@
+node_modules/
 .env
+profiles.csv
+profiles.xlsx
+*.png
+.DS_Store
+node_modules
