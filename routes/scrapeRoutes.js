@@ -18,11 +18,11 @@ router.post("/", async (req, res) => {
     }
 
     // Check if MongoDB is connected
-    if (mongoose.connection.readyState !== 1) {
-      return res.status(503).json({ 
-        message: "Database connection not ready. Please try again in a moment." 
-      });
-    }
+    // if (mongoose.connection.readyState !== 1) {
+    //   return res.status(503).json({ 
+    //     message: "Database connection not ready. Please try again in a moment." 
+    //   });
+    // }
 
     console.log("🔍 Starting scrape for:", query);
     const profiles = await scrapeLinkedInProfiles(query);
@@ -35,8 +35,8 @@ router.post("/", async (req, res) => {
     }
 
     // Clear previous data and save to MongoDB
-    await Profile.deleteMany({});
-    await Profile.insertMany(profiles);
+    // await Profile.deleteMany({});
+    // await Profile.insertMany(profiles);
 
     // Generate CSV
     const parser = new Parser({

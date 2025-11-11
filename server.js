@@ -9,8 +9,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Atlas connection string
-const MONGO_URI = "mongodb+srv://pppatil9916_db_user:8jkPyKJk02m8UQFS@jobtask.pr868wh.mongodb.net/linkedinScraper?retryWrites=true&w=majority";
 
 // Connect to MongoDB Atlas with proper options
 mongoose.connect(process.env.MONGODB_URI, {
